@@ -2,17 +2,35 @@ const mongoose = require("mongoose");
 
 const bikeSchema = new.mongoose.Schema(
     {
+        proprietaire: _idUser,
         marque: String,
         type: String,
-        location: Number,
+        adresse: String,
         état: String,
-        taille: Number,
+        catégorie: String,
+        taille: String,
+        couleur: String,
         description: String,
+        imageUrl: String,
+        disponibilité: date,
 
     },
     { timestamps: true }
 );
 
-const bikeModel = mongoose.model ("Bike", bikeSchema);
+const bikeModel = mongoose.model("Bike", bikeSchema);
 
 module.export = bikeModel;
+
+
+
+// Propriétaire: _idUsers
+// catégorie:[“VTC,VTT,BMX, TANDEM”]
+// couleur:String 
+// prix: Number
+// taille:[S,M,L]
+// État: [Etat correct,Très Bon État,Comme neuf]
+// Disponibilité: [dates,]
+// localisation commune : number (codecommune)
+// 
+// 
