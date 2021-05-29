@@ -1,0 +1,12 @@
+<h2>Bike List</h2>
+
+
+<ul>
+  {{#each bikes}}
+  <li>
+    <h2>{{this.type}}  </h2>
+    <a href = '/bikes/{{id}}'> détail</a>
+    <a href = '/bikes/{{id}}/'> louer ce velo</a>
+  </li>
+  {{/each}}
+</ul>
