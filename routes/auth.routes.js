@@ -14,7 +14,7 @@ router.get('/signup', (req, res) => {
 
 router.post('/signup', (req, res, next) => {
 
-    const { prenom, password } = req.body;
+    const { prenom, nom, pseudo, mail, telephone, location, password } = req.body;
 
     if (!prenom || !password) {
         res.render('signup', { errorMessage: 'All fields are mandatory. Please provide your username, email and password.' });
@@ -28,6 +28,12 @@ router.post('/signup', (req, res, next) => {
             return User.create({
                 // username: username
                 prenom,
+                nom,
+                pseudo,
+                mail,
+                telephone,
+                location,
+
 
                 // passwordHash => this is the key from the User model
                 //     ^
