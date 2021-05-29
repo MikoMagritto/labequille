@@ -11,7 +11,7 @@ const path = require('path');
 
 
 mongoose
-  .connect('mongodb+srv://ChloeT:AxC36oVEkWZF775W@cluster0.jwh3k.mongodb.net/labequille', { useNewUrlParser: true })
+  .connect('mongodb://localhost/lab-quille', { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -23,6 +23,7 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+//require('./configs/session.config')(app);
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -48,13 +49,13 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.title = 'La Béquille';
 
 
 const authRoute = require('./routes/auth.routes');
 const index = require('./routes/index');
 app.use('/', index);
-app.use('/', authRoute);
+app.use('/', authRoute)
 
 
 module.exports = app;

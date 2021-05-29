@@ -1,5 +1,5 @@
 <div id="form">
-  <h2>Login</h2>
+  <h2>Sign Up</h2>
   <form action="/signup" method="POST">
     <label for="input-username">Prénom</label>
     <input type="username" id="input-information" name="prenom" placeholder="Ton prénom" />
@@ -17,15 +17,15 @@
     <input type="number" id="input-information" name="telephone" placeholder="Ton 06" />
 
     <label for="">Adresse</label>
-    <input type="text" id="input-information" name="adresse" placeholder="Ton mail" />
+    <input type="text" id="input-information" name="adresse" placeholder="Ton château" />
 
     <label for="input-password">Password</label>
     <input type="password" name="password" id="input-password" placeholder="********" />
- 
-    <button type="submit">Login</button>
- 
+
+    <button type="submit">Créer un compte</button>
+
     {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
+    <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
 </div>
