@@ -27,6 +27,8 @@ User.insertMany(users)
   .catch((err) => console.log(err));
 
 const bikes = [{
+
+  proprietaire: _idUser,
   marque: "La Becane",
   type: "Route",
   location: "75018",
