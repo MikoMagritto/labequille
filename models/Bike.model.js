@@ -1,18 +1,18 @@
 const mongoose = require("mongoose");
 
-const bikeSchema = new.mongoose.Schema(
+const bikeSchema = new mongoose.Schema(
     {
         marque: String,
         type: String,
-        location: Number,
-        état: String,
-        taille: Number,
+        location: String,
+        etat: String,
+        taille: String,
         description: String,
-
+        image : String
     },
     { timestamps: true }
 );
 
 const bikeModel = mongoose.model ("Bike", bikeSchema);
 
-module.export = bikeModel;
+module.exports = bikeModel;
