@@ -8,7 +8,7 @@ mongoose.connect(`mongodb+srv://ChloeT:AxC36oVEkWZF775W@cluster0.jwh3k.mongodb.n
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
-  .then(() => { console.log("connected ta mere") })
+  .then(() => { console.log("victoire") })
   .catch((err) => console.log(err));
 
 const users = [{
@@ -28,14 +28,24 @@ User.insertMany(users)
 
 const bikes = [{
 
-  proprietaire: _idUser,
-  marque: "La Becane",
+  proprietaire: "_idUser",
+  marque: "Motobecane",
   type: "Route",
   location: "75018",
   etat: "bon etat",
   taille: "M",
   description: "Vélo Motobecane Equipe Pro",
   image : "https://saikle-prod.fra1.digitaloceanspaces.com/large_20210527_151421_9ac54b671c.jpg"
+},
+{proprietaire:"_idUser",
+  marque: "Sunn",
+  type: "VTC",
+  location: "75012",
+  etat: "bon etat",
+  taille: "M",
+  description: "Vélo Sunn cintre ville",
+  image : "https://saikle-prod.fra1.digitaloceanspaces.com/large_20210527_151637_edfb21cf41.jpg"
+
 }];
 
 Bike.insertMany(bikes)
