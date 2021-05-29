@@ -66,15 +66,16 @@ router.post('/login', (req, res, next) => {
                 res.render('login', { errorMessage: `utilisateur non trouvé` })
                 return;
             } else {
-                if (bcryptjs.compareSync(password, userFromDb.passwordHash)) {
+                console.log("COUCOU", password, userFromDb.password);
+                if (bcryptjs.compareSync(password, userFromDb.password)) {
                     req.session.currentUser = userFromDb
-                    res.redirect('/profil')
+                    res.redirect('/')
                 } else {
                     res.render('login', { errorMessage: 'mauvais mot de passe' })
                 }
             }
         })
-        .catch(err => { console.log('oops not found this user') })
+        .catch(err => { console.log('oops not found this user', err) })
 })
 
 /**User.findOne({ email })
