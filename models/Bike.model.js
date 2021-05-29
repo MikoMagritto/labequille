@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 
 const bikeSchema = new mongoose.Schema(
     {
+        proprietaire: _idUser,
         marque: String,
         type: String,
         location: String,
@@ -13,6 +14,6 @@ const bikeSchema = new mongoose.Schema(
     { timestamps: true }
 );
 
-const bikeModel = mongoose.model ("Bike", bikeSchema);
+const bikeModel = mongoose.model("Bike", bikeSchema);
 
 module.exports = bikeModel;
