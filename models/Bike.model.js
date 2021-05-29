@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const bikeSchema = new mongoose.Schema(
     {
-        proprietaire: _idUser,
+        proprietaire: String,
         marque: String,
         type: String,
         location: String,
