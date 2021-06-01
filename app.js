@@ -25,11 +25,16 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 const app = express();
 require('./configs/session.config')(app);
 
+// bind user to view - locals
+const bindUserToViewLocals = require('./configs/user-locals.config');
+
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bindUserToViewLocals);
 
 // Express View engine setup
 
