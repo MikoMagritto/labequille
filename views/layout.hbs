@@ -17,7 +17,7 @@
         <p><a href="/"> Accueil </a></p>
       </li>
       <li id="to-right">
-        {{#if user}}
+        {{#if userFromDb}}
         <form id="logout-form" action="/logout" method="POST">
           <button>Logout</button>
         </form>

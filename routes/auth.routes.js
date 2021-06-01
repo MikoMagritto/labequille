@@ -93,6 +93,11 @@ router.post('/login', (req, res, next) => {
     .catch(error => next(error));
 }); */
 
+router.post('/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/');
+});
+
 router.get('/profil', (req, res, next) => {
     res.render('auth/profil', { user: req.session.currentUser })
 })
