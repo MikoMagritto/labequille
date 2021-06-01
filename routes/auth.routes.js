@@ -62,7 +62,6 @@ router.post('/login', (req, res, next) => {
     User.findOne({ mail })
         .then((userFromDb) => {
             if (!userFromDb) {
-
                 res.render('login', { errorMessage: `utilisateur non trouvé` })
                 return;
             } else {

@@ -4,6 +4,7 @@ const Bike = require ("../models/Bike.model.js")
 
 /* GET home page */
 router.get('/', (req, res, next) => {
+  console.log ("yo")
   res.render('index');
 });
 
@@ -28,6 +29,12 @@ router.get("/bikes/:id", (req, res, next) => {
 })
 
 
+router.get("/bike/create", (req, res, next) => {
+  res.render("createabike", {})
+})
+router.post("/bike/create", (req, res, next) => {const { title, brand, location, status, size, description, picture } = req.body
+Bike.create({ title, brand, location, status, size, description, picture }).then(() => res.redirect('/bikes')).catch(error => console.log(error))
+})
 
 
 module.exports = router;

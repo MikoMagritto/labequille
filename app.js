@@ -10,9 +10,8 @@ const logger = require('morgan');
 const path = require('path');
 
 
-
 mongoose
-  .connect('mongodb://localhost/lab-quille', { useNewUrlParser: true })
+  .connect(`mongodb+srv://ChloeT:AxC36oVEkWZF775W@cluster0.jwh3k.mongodb.net/labequille`, { useNewUrlParser: true })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
@@ -24,7 +23,7 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
-require('./configs/session.config')(app);
+//require('./configs/session.config')(app);
 
 // Middleware Setup
 app.use(logger('dev'));
