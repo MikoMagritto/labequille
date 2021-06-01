@@ -1,0 +1,33 @@
+const express = require('express');
+const router = express.Router();
+const User = require('../models/User.model.js');
+const bike = require('../models/Bike.model');
+
+router.get("/bikes", (req, res, next) => {
+  Bike.find().then(allBikes => {
+    allBikes.forEach((b) => console.log(b));
+    res.render("bike", { bikes: allBikes })
+  }).catch(error => console.log(error))
+});
+
+router.get("/bikes/:id", (req, res, next) => {
+
+  Bike.findOne({ _id: req.params.id })
+    .then(oneBike => {
+      console.log(oneBike)
+      res.render("bike-detail", {
+        unVelo: oneBike
+      })
+
+    })
+    .catch(error => console.log(error))
+})
+
+
+router.get("/bike/create", (req, res, next) => {
+  res.render("createabike", {})
+})
+router.post("/bike/create", (req, res, next) => {
+  const { title, brand, location, status, size, description, picture } = req.body
+  Bike.create({ title, brand, location, status, size, description, picture }).then(() => res.redirect('/bikes')).catch(error => console.log(error))
+})
