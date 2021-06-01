@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const bcryptjs = require('bcryptjs');
-
+const routeGuard = require('../configs/route-guard.config')
 
 const User = require('../models/User.model.js');
 
@@ -56,27 +56,27 @@ router.get('/login', (req, res, next) => {
 
 router.post('/login', (req, res, next) => {
     const { mail, password } = req.body;
-    if (!mail || !password) {
-        res.render('login', { errorMessage: 'Merci de remplir les deux champs' })
+    if (mail === '' || password === '') {
+        res.render('login', {
+            errorMessage: 'Please enter both, email and password to login.'
+        });
+        return;
     }
     User.findOne({ mail })
-        .then((userFromDb) => {
-            if (!userFromDb) {
-
-                res.render('login', { errorMessage: `utilisateur non trouvé` })
+        .then(user => {
+            if (!user) {
+                res.render('login', { errorMessage: 'Email is not registered. Try with other email.' });
                 return;
+            } else if (bcryptjs.compareSync(password, user.password)) {
+                console.log(user.password)
+                req.session.currentUser = user;
+                res.redirect('/');
             } else {
-                console.log("COUCOU", password, userFromDb.password);
-                if (bcryptjs.compareSync(password, userFromDb.password)) {
-                    req.session.currentUser = userFromDb
-                    res.redirect('/')
-                } else {
-                    res.render('login', { errorMessage: 'mauvais mot de passe' })
-                }
+                res.render('login', { errorMessage: 'Incorrect password.' });
             }
         })
-        .catch(err => { console.log('oops not found this user', err) })
-})
+        .catch(error => next(error));
+});
 
 /**User.findOne({ email })
     .then(user => {
@@ -98,8 +98,8 @@ router.post('/logout', (req, res) => {
     res.redirect('/');
 });
 
-router.get('/profil', (req, res, next) => {
-    res.render('auth/profil', { user: req.session.currentUser })
+router.get('/profil', routeGuard, (req, res, next) => {
+    res.render('userProfile')
 })
 
 router.get('/private', (req, res, next) => {
