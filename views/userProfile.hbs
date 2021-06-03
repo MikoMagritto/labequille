@@ -1,6 +1,16 @@
 {{#if user}}
 <h2>Welcome, {{ user.prenom }}!</h2>
 <p>This is your profile page my friend! And your email is: {{ user.mail }}</p>
+
+{{#each bikes}}
+{{brand}}
+{{location}}
+{{type}}
+{{status}}
+{{size}}
+{{description}}
+<img src="{{picture}}">
+{{/each}}
 {{else}}
 <p>Still no logged in user, sorry!</p>
 {{/if}}

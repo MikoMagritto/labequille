@@ -3,7 +3,10 @@ const router = express.Router();
 const bcryptjs = require('bcryptjs');
 const routeGuard = require('../configs/route-guard.config')
 
+
 const User = require('../models/User.model.js');
+
+const Bike = require('../models/Bike.model')
 
 router.get('/signup', (req, res) => res.render('signup'));
 
@@ -99,19 +102,26 @@ router.post('/logout', (req, res) => {
 });
 
 router.get('/profil', routeGuard, (req, res, next) => {
-    res.render('userProfile')
+    Bike.find({ user: req.session.currentUser._id })
+        .then((bikes) => {
+            console.log("coucou", bikes)
+            res.render('userProfile', { user: req.session.currentUser, bikes })
+        })
+        .catch(err => next(err))
+    // console.log("coucou", user.velos)
+    // res.render('userProfile')
 })
 
-router.get('/private', (req, res, next) => {
-    if (!req.session.currentUser) {
-        res.redirect('/main')
+// router.get('/private', (req, res, next) => {
+//     if (!req.session.currentUser) {
+//         res.redirect('/main')
 
-    }
-    res.render('private', { user: req.session.currentUser })
-})
+//     }
+//     res.render('private', { user: req.session.currentUser })
+// })
 
-router.get('/main', (req, res, next) => {
-    res.render('main')
-})
+// router.get('/main', (req, res, next) => {
+//     res.render('main')
+// })
 
 module.exports = router;

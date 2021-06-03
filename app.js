@@ -39,7 +39,7 @@ app.use(bindUserToViewLocals);
 // Express View engine setup
 
 // app.use(require('node-sass-middleware')({
-//   src:  path.join(__dirname, 'public'),
+//   src: path.join(__dirname, 'public'),
 //   dest: path.join(__dirname, 'public'),
 //   sourceMap: true
 // }));
@@ -59,8 +59,10 @@ app.locals.title = 'La Béquille';
 
 const authRoute = require('./routes/auth.routes');
 const index = require('./routes/index');
+const veloRoute = require('./routes/velo.routes')
 app.use('/', index);
 app.use('/', authRoute)
+app.use('/', veloRoute)
 
 
 module.exports = app;

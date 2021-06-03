@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
-
-const bikeSchema = new mongoose.Schema(
+const Schema = mongoose.Schema
+const bikeSchema = Schema(
     {
-        proprietaire: String,
-        marque: String,
-        type: String,
+        user: { type: Schema.Types.ObjectId, ref: "User" },
+        brand: String,
         location: String,
-        etat: String,
-        taille: String,
+        type: String,
+        status: String,
+        size: String,
         description: String,
-        image : String
+        picture: String
     },
     { timestamps: true }
 );

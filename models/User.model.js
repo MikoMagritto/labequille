@@ -9,7 +9,7 @@ const userSchema = new Schema(
     telephone: String,
     location: String,
     password: String,
-    // vélos: [{ type: Schema.Types.ObjectId, ref: 'Bike' }],
+    velos: [{ type: Schema.Types.ObjectId, ref: 'Bike' }],
   },
 
   { timestamps: true }

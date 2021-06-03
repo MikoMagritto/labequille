@@ -1,28 +1,31 @@
-<form action="/bike/create" method="POST"></form>
-<label>
-    Title:
-    <input type="text" name="title" />
+<form action="/bike/create" method="POST" enctype="multipart/form-data">
+
+
+
+  <label>
+    Type
+    <input type="text" name="type" />
   </label>
 
   <label>
     Brand:
-    <input type="text" />
+    <input type="text" name="brand" />
   </label>
 
   <label>
     Location:
-    <input type="number" />
+    <input type="text" name="location" />
   </label>
 
 
-<label>
+  <label>
     Status:
-    <input type="text" />
+    <input type="text" name="status" />
   </label>
 
   <label>
     Size:
-    <input type="text" />
+    <input type="text" name="size" />
   </label>
 
   <label>
@@ -37,5 +40,3 @@
 
   <button>Create a bike</button>
 </form>
-  
-   
