@@ -17,6 +17,7 @@
     <ul class="navbarUl">
       <li id="to-left">
         <p><a href="/"> Accueil </a></p>
+      
       </li>
 
       <li id="to-right">
@@ -24,12 +25,13 @@
         <form id="logout-form" action="/logout" method="POST">
           <button>Se déconnecter</button>
         </form>
+        
 
         <a href="/bike/create">Ajouter un vélo </a>
         <a href="/profil">Mon compte</a>
         {{else}}
-        <a href="/signup">Signup</a>
-        <a href="/login">Se connecter</a>
+        <a href="/signup">Inscription</a>
+        <a href="/login">Connexion</a>
         {{/if}}
       </li>
     </ul>
