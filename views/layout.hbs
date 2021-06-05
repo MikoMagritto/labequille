@@ -11,8 +11,8 @@
 
 <body>
 
-  <nav class="navbar">
-    <ul>
+  <nav>
+    <ul class="navbarUl">
       <li id="to-left">
         <p><a href="/"> Accueil </a></p>
       </li>
@@ -23,11 +23,11 @@
           <button>Logout</button>
         </form>
 
-        <a href="/bike/create">Create a bike </a> <span> | </span>
-        <a href="/profil">My account</a> <span> | </span>
+        <a href="/bike/create">Create a bike </a>
+        <a href="/profil">My account</a>
         {{else}}
-        <a href="/signup">Signup</a> <span> | </span>
-        <a href="/login">Login</a> <span> | </span>
+        <a href="/signup">Signup</a>
+        <a href="/login">Login</a>
         {{/if}}
       </li>
     </ul>

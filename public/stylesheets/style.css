@@ -1,27 +1,62 @@
 body {
  margin: 10px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  bbackground-color: red;
+  font: 14px "Varela Round", sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
-
-.nav-bar ul {
+/*.nav-bar ul {
   list-style-type: none;
+  background-color: red;
   margin: 0;  
   padding: 0;
   text-align: center;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+}*/
+
+a:link {
+  text-decoration: none;
 }
 
-ul {
+.navbarUl {
   display: flex;
-  fflex-direction: row-reverse;
+  list-style-type: none;
+  text-decoration: none;
+  align-items: center;
+  padding-left: 0;
+  justify-content: start;
+  max-width: 720px;
+  margin: 0 auto;
+  height: 10vh;
 }
 
-li {
+#to-left {
   display: flex;
+  text-align: center;
+  margin-right: 70vh;
+  width: 100px;
+  padding: 20px;
+  justify-content: flex-start;
+}
+
+#to-left p {
+  margin-left: 0;
+  justify-content: flex-start;
+  text-decoration: none;
+  list-style: none;
+  
+}
+
+#to-right {
+display: flex;
+justify-content: flex-end;
+text-align: center;
+}
+
+#to-right a {
+width: 10vh;
+color: black;
+list-style-type: none;
+padding: 10px;
+
+
 }
