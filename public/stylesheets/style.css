@@ -25,14 +25,13 @@ a:link {
   align-items: center;
   padding-left: 0;
   justify-content: start;
-  max-width: 720px;
   margin: 0 auto;
-  height: 10vh;
+  justify-content: space-between;
+
 }
 
 #to-left {
   text-align: center;
-  margin-right: 70vh;
   width: 100px;
   padding: 20px;
   justify-content: flex-start;
@@ -46,11 +45,6 @@ a:link {
   
 }
 
-#to-right {
-display: flex;
-justify-content: flex-end;
-text-align: center;
-}
 
 #to-right a {
 width: 20vh;
@@ -67,4 +61,9 @@ align-items: center;
 
 .button{
   background-color: yellow;
+}
+
+.title {
+  text-align: center;
+ 
 }
