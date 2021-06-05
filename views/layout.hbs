@@ -11,16 +11,18 @@
 
 <body>
 
-  <nav>
+  <nav class="navbar">
     <ul>
       <li id="to-left">
         <p><a href="/"> Accueil </a></p>
       </li>
+
       <li id="to-right">
         {{#if user}}
         <form id="logout-form" action="/logout" method="POST">
           <button>Logout</button>
         </form>
+
         <a href="/bike/create">Create a bike </a> <span> | </span>
         <a href="/profil">My account</a> <span> | </span>
         {{else}}
