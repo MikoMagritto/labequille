@@ -17,6 +17,7 @@ a:link {
   text-decoration: none;
 }
 
+
 .navbarUl {
   display: flex;
   list-style-type: none;
@@ -30,7 +31,6 @@ a:link {
 }
 
 #to-left {
-  display: flex;
   text-align: center;
   margin-right: 70vh;
   width: 100px;
@@ -53,10 +53,18 @@ text-align: center;
 }
 
 #to-right a {
-width: 10vh;
+width: 20vh;
 color: black;
 list-style-type: none;
 padding: 10px;
+}
+
+#to-right form{
+  display: flex;
+align-items: center;
+}
 
 
+.button{
+  background-color: yellow;
 }

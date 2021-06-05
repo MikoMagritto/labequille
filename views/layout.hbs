@@ -20,14 +20,14 @@
       <li id="to-right">
         {{#if user}}
         <form id="logout-form" action="/logout" method="POST">
-          <button>Logout</button>
+          <button>Se déconnecter</button>
         </form>
 
-        <a href="/bike/create">Create a bike </a>
-        <a href="/profil">My account</a>
+        <a href="/bike/create">Ajouter un vélo </a>
+        <a href="/profil">Mon compte</a>
         {{else}}
         <a href="/signup">Signup</a>
-        <a href="/login">Login</a>
+        <a href="/login">Se connecter</a>
         {{/if}}
       </li>
     </ul>
