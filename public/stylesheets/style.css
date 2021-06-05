@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
 body {
  margin: 10px;
   font: 14px "Varela Round", sans-serif;
@@ -67,4 +69,43 @@ align-items: center;
 
 .button{
   background-color: yellow;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 5vw;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2vw;
+}
+
+.title {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+background-image: url('https://res.cloudinary.com/la-chaussette-sale/image/upload/v1622897842/Project%20CodeCycle/ve%CC%81lo_couverture_bik6yx.jpg');
+background-size: cover;
+height: 650px;
+background-repeat: no-repeat;
+}
+
+div.formSearch {
+  display: table-row;
+}
+
+label, input {
+  display: table-cell;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 50vh;
+}
+
+label {
+  padding-right: 10px;
 }
