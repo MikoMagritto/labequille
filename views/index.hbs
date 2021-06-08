@@ -3,31 +3,33 @@
   <h3>Ne laisse plus ton vélo dans ton garage, loue le ! </h3>
   <form>
     <div class="formSearch">
-
-      <label for="">Localisation</label>
       <input type="text" id="input-information" name="localisation" placeholder="Saisis un lieu ou tu veux pédaler.." />
 
     </div>
 
-    <div class="formSearch">
-      <label for="">Type de vélo </label>
-      <input type="text" id="input-information" name="typeVelo" placeholder="Avec quel vélo tu veux pédaler.." />
+    <div class="inputDate">
+      <input type="date" id="debut" name="typeVelo" placeholder="Début" />
+      <input type="date" id="Fin" name="typeVelo" placeholder="Fin" />
     </div>
 
-
+    <button id="rechercher">Rechercher</button>
   </form>
 </div>
 
 
 <h2>Les vélos disponibles près de chez toi </h2>
 
+<div class="listBike">
 
-<ul>
-  {{#each bikes}}
-  <li>
-    <h2>{{this.type}} </h2>
-    <a href='/bikes/{{id}}'> détail</a>
-    <a href='/bikes/{{id}}/'> louer ce velo</a>
-  </li>
-  {{/each}}
-</ul>
+  <div class="container">
+    {{#each bikes}}
+    <div>
+      <h2>Le {{this.type}} de {{this.user.prenom}} </h2>
+      <img src="{{this.picture}}" alt="">
+      <a href='/bikes/{{id}}'> détail</a>
+      <a href='/bikes/{{id}}/'> louer ce velo</a>
+    </div>
+    {{/each}}
+  </div>
+
+</div>
