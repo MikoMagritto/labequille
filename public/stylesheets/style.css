@@ -77,29 +77,86 @@ h3 {
 }
 
 .title {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+color: white;
+display: flex;
+flex-direction: column;
+align-items: center;
 background-image: url('https://res.cloudinary.com/la-chaussette-sale/image/upload/v1622897842/Project%20CodeCycle/ve%CC%81lo_couverture_bik6yx.jpg');
 background-size: cover;
 height: 1000px;
 background-repeat: no-repeat;
 }
 
-div.formSearch {
-  display: table-row;
+.formSearch input {
+  width: 100vh;
+  padding: 2vh;
+  text-align: center;
+  border-radius: .375rem;
+  border:thin
+
 }
 
-label, input {
-  display: table-cell;
-  margin-bottom: 10px;
+.inputDate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border:thin
 }
 
-input {
-  width: 50vh;
+.inputDate input {
+padding:2vh;
+width:100%;
+border:thin
 }
 
-label {
-  padding-right: 10px;
+.inputDate #debut {
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: .375rem;
+  border:thin
+}
+
+.inputDate #Fin {
+  margin-top: 10px;
+  border-radius: .375rem;
+  border:thin
+}
+
+#rechercher {
+
+width: 100%;
+margin-top: 10px;
+    padding: 8px 24px;
+    font-size: 16px;
+    line-height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #61366b;
+    font-family: BrownPro,BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  text-align: center;
+  border-radius: .375rem;
+  background-color: #fff;
+  border:thin
+}
+
+#form form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+#form form input {
+padding:2vh;
+margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container img {
+  width: 100px;
 }
