@@ -40,7 +40,10 @@ router.post("/bike/create", fileUpload.single("picture"), (req, res, next) => {
     user: req.session.currentUser._id,
     type,
     brand,
-    location,
+    location: {
+      type: 'Point',
+      coordinates: [longitude, latitude]
+    },
     status,
     size,
     description,
@@ -53,6 +56,36 @@ router.post("/bike/create", fileUpload.single("picture"), (req, res, next) => {
     .catch(error => console.log(error))
 })
 
+router.get('/bikesmap', (req, res, next) => {
+  Bike.find({}, (error, bikesFromDB) => {
+    if (error) {
+      next(error);
+    } else {
+      res.render('map', { bikes: bikesFromDB });
+    }
+  });
+});
+
+router.get('/api', (req, res, next) => {
+  Bike.find({}, (error, allBikesFromDB) => {
+    if (error) {
+      next(error);
+    } else {
+      res.status(200).json({ bikes: allBikesFromDB });
+    }
+  });
+});
+
+router.get('/api/:id', (req, res, next) => {
+  let restaurantId = req.params.id;
+  Restaurant.findOne({ _id: bikeId }, (error, oneBikeFromDB) => {
+    if (error) {
+      next(error)
+    } else {
+      res.status(200).json({ restaurant: oneBikeFromDB });
+    }
+  });
+});
 //router.get('/user/:id',(req,res,next)=>)
 
 module.exports = router

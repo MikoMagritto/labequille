@@ -4,16 +4,19 @@ const bikeSchema = Schema(
     {
         user: { type: Schema.Types.ObjectId, ref: "User" },
         brand: String,
-        location: String,
+        location: { type: { type: String }, coordinates: [Number] },
         type: String,
         status: String,
         size: String,
         description: String,
         picture: String
     },
-    { timestamps: true }
+
+    { timestamps: true },
+
 );
 
+bikeSchema.index({ location: '2dsphere' });
 const bikeModel = mongoose.model("Bike", bikeSchema);
 
 module.exports = bikeModel;
