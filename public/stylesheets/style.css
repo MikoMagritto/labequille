@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+body {
+ margin: 10px;
+  font: 14px "Varela Round", sans-serif;
+}
+
+/*.nav-bar ul {
+  list-style-type: none;
+  background-color: red;
+  margin: 0;  
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}*/
+
+a:link {
+  text-decoration: none;
+}
+
+
+.navbarUl {
+  display: flex;
+  list-style-type: none;
+  text-decoration: none;
+  align-items: center;
+  padding-left: 0;
+  justify-content: start;
+  margin: 0 auto;
+  justify-content: space-between;
+
+}
+
+#to-left {
+  text-align: center;
+  width: 100px;
+  padding: 20px;
+  justify-content: flex-start;
+}
+
+#to-left p {
+  margin-left: 0;
+  justify-content: flex-start;
+  text-decoration: none;
+  list-style: none;
+  
+}
+
+
+#to-right a {
+width: 20vh;
+color: black;
+list-style-type: none;
+padding: 10px;
+}
+
+#to-right form{
+  display: flex;
+align-items: center;
+}
+
+
+.button{
+  background-color: yellow;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 5vw;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2vw;
+}
+
+.title {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+background-image: url('https://res.cloudinary.com/la-chaussette-sale/image/upload/v1622897842/Project%20CodeCycle/ve%CC%81lo_couverture_bik6yx.jpg');
+background-size: cover;
+height: 1000px;
+background-repeat: no-repeat;
+}
+
+div.formSearch {
+  display: table-row;
+}
+
+label, input {
+  display: table-cell;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 50vh;
+}
+
+label {
+  padding-right: 10px;
+}

@@ -33,6 +33,7 @@ router.post("/bike/create", fileUpload.single("picture"), (req, res, next) => {
   if (!req.session.currentUser) {
     return next(new Error('You must be logged to create a post'));
   }
+  
 
   const { type, brand, location, status, size, description } = req.body
   const picture = req.file.path;
