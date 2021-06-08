@@ -46,13 +46,19 @@ a:link {
   list-style: none;
   
 }
-
+#to-right{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  
+}
 
 #to-right a {
 width: 20vh;
 color: black;
 list-style-type: none;
 padding: 10px;
+
 }
 
 #to-right form{
@@ -153,10 +159,22 @@ margin-bottom: 10px;
 }
 
 .container {
+  
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .container img {
   width: 100px;
+}
+
+.cart{
+  border: 1px solid red;
+  width: 30%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
