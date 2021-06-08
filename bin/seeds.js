@@ -47,14 +47,15 @@ const bikes = [{
   image : "https://saikle-prod.fra1.digitaloceanspaces.com/large_20210527_151637_edfb21cf41.jpg"
 
 },
+
 {proprietaire:"_idUser",
-  marque: "Peugeot",
-  type: "Route",
+brand: "Peugeot",
+type: "Route",
   location: "75015",
-  etat: "bon etat",
-  taille: "S",
+  status: "bon etat",
+  size: "S",
   description: "Vélo Peugeot Cannes",
-  image : "https://saikle-prod.fra1.digitaloceanspaces.com/large_902_F6658_6716_46_EF_B312_C4_D6_A0_D3_F51_B_ca562b4592.jpeg"
+  picture : "https://saikle-prod.fra1.digitaloceanspaces.com/large_902_F6658_6716_46_EF_B312_C4_D6_A0_D3_F51_B_ca562b4592.jpeg"
 },
 {proprietaire:"_idUser",
   marque: "Gitane",

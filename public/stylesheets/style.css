@@ -44,12 +44,19 @@ a:link {
   justify-content: flex-start;
   text-decoration: none;
   list-style: none;
+  box-shadow: 0px 0px 20px 10px rgba(255, 0, 0, 0.295);
+	border-radius: 30px;
+  padding: 10px;
   
 }
 #to-right{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
+  box-shadow: 0px 0px 20px 10px rgba(255, 0, 0, 0.295);
+	border-radius: 30px;
+  padding: 10px;
+  
   
 }
 
@@ -58,7 +65,6 @@ width: 20vh;
 color: black;
 list-style-type: none;
 padding: 10px;
-
 }
 
 #to-right form{
@@ -89,7 +95,7 @@ flex-direction: column;
 align-items: center;
 background-image: url('https://res.cloudinary.com/la-chaussette-sale/image/upload/v1622897842/Project%20CodeCycle/ve%CC%81lo_couverture_bik6yx.jpg');
 background-size: cover;
-height: 650px;
+height: 1000px;
 background-repeat: no-repeat;
 }
 

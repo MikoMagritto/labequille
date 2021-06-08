@@ -34,6 +34,7 @@ router.post("/bike/create", fileUpload.single("picture"), (req, res, next) => {
     return next(new Error('You must be logged to create a post'));
   }
 
+
   const { type, brand, location, status, size, description } = req.body
   const picture = req.file.path;
   Bike.create({
@@ -50,42 +51,32 @@ router.post("/bike/create", fileUpload.single("picture"), (req, res, next) => {
     picture
   })
     .then((bike) => {
-      console.log("coucou", req.session.currentUser.id);
+      /* console.log("coucou", req.session.currentUser.id);*/
       res.redirect('/')
     })
     .catch(error => console.log(error))
 })
 
-router.get('/bikesmap', (req, res, next) => {
-  Bike.find({}, (error, bikesFromDB) => {
-    if (error) {
-      next(error);
-    } else {
-      res.render('map', { bikes: bikesFromDB });
-    }
-  });
+router.get("/bike/edit/:id", function (req, res, next) {
+  console.log(req.params.id)
+  Bike.findById(req.params.id)
+    .then(function (bikeFromDb) {
+      console.log("coucou", bikeFromDb)
+      res.render("bike-edit", {
+        unVelo: bikeFromDb,
+      });
+    })
+    .catch((err) => next(err));
 });
+router.post("/bike/edit/:id", fileUpload.single("picture"), function (req, res, next) {
+  const { type, brand, location, status, size, description } = req.body
+  const picture = req.file.path
+  const id = req.params.id
+  Bike.findByIdAndUpdate(id, { type, brand, location, status, size, description, picture }, { new: true }).then((bikeInformation) => {
+    res.redirect("/")
+  }).catch((err) => next(err))
+})
 
-router.get('/api', (req, res, next) => {
-  Bike.find({}, (error, allBikesFromDB) => {
-    if (error) {
-      next(error);
-    } else {
-      res.status(200).json({ bikes: allBikesFromDB });
-    }
-  });
-});
-
-router.get('/api/:id', (req, res, next) => {
-  let restaurantId = req.params.id;
-  Restaurant.findOne({ _id: bikeId }, (error, oneBikeFromDB) => {
-    if (error) {
-      next(error)
-    } else {
-      res.status(200).json({ restaurant: oneBikeFromDB });
-    }
-  });
-});
 //router.get('/user/:id',(req,res,next)=>)
 
 module.exports = router
