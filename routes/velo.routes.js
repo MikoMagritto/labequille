@@ -68,6 +68,7 @@ router.get("/bike/edit/:id", function (req, res, next) {
     })
     .catch((err) => next(err));
 });
+
 router.post("/bike/edit/:id", fileUpload.single("picture"), function (req, res, next) {
   console.log("picture")
   const { type, brand, location, status, size, description } = req.body
@@ -76,11 +77,15 @@ router.post("/bike/edit/:id", fileUpload.single("picture"), function (req, res, 
   if (req.file) {
     data.picture = req.file.path
   }
-  console.log("data", data)
   Bike.findByIdAndUpdate(id, data, { new: true }).then((bikeInformation) => {
     res.redirect("/")
   }).catch((err) => next(err))
-})
+});
+
+router.get('/bike/delete/:id', (req, res) => {
+  const id = req.params.id;
+  Bike.findByIdAndDelete(id).then(() => res.redirect('/profil')).catch(error => console.log(error));
+});
 
 //router.get('/user/:id',(req,res,next)=>)
 
