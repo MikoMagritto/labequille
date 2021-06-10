@@ -61,7 +61,7 @@ router.get("/bike/edit/:id", function (req, res, next) {
   console.log(req.params.id)
   Bike.findById(req.params.id)
     .then(function (bikeFromDb) {
-      console.log("coucou", bikeFromDb)
+      //console.log("coucou", bikeFromDb)
       res.render("bike-edit", {
         unVelo: bikeFromDb,
       });
@@ -69,10 +69,15 @@ router.get("/bike/edit/:id", function (req, res, next) {
     .catch((err) => next(err));
 });
 router.post("/bike/edit/:id", fileUpload.single("picture"), function (req, res, next) {
+  console.log("picture")
   const { type, brand, location, status, size, description } = req.body
-  const picture = req.file.path
-  const id = req.params.id
-  Bike.findByIdAndUpdate(id, { type, brand, location, status, size, description, picture }, { new: true }).then((bikeInformation) => {
+  const id = req.params.id;
+  const data = { type, brand, location, status, size, description };
+  if (req.file) {
+    data.picture = req.file.path
+  }
+  console.log("data", data)
+  Bike.findByIdAndUpdate(id, data, { new: true }).then((bikeInformation) => {
     res.redirect("/")
   }).catch((err) => next(err))
 })

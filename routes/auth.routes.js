@@ -104,7 +104,7 @@ router.post('/logout', (req, res) => {
 router.get('/profil', routeGuard, (req, res, next) => {
     Bike.find({ user: req.session.currentUser._id })
         .then((bikes) => {
-            console.log("coucou", bikes)
+            //console.log("coucou", bikes)
             res.render('userProfile', { user: req.session.currentUser, bikes })
         })
         .catch(err => next(err))

@@ -1,39 +1,39 @@
-<form action="/bike/edit/{{unVelo._id}}" method="POST" enctype = "multipart/form-data">
- 
- <label>
+<form action="/bike/edit/{{unVelo._id}}" method="POST" enctype="multipart/form-data">
+
+  <label>
     Type
-    <input type="text" name="type" value ="{{unVelo.type}}" />
+    <input type="text" name="type" value="{{unVelo.type}}" />
   </label>
 
   <label>
     Brand:
-    <input type="text" name="brand" value ="{{unVelo.brand}}" />
+    <input type="text" name="brand" value="{{unVelo.brand}}" />
   </label>
 
   <label>
     Location:
-    <input type="text" name="location" value ="{{unVelo.location}}" />
+    <input type="text" name="location" value="{{unVelo.location}}" />
   </label>
 
 
   <label>
     Status:
-    <input type="text" name="status" value ="{{unVelo.status}}"/>
+    <input type="text" name="status" value="{{unVelo.status}}" />
   </label>
 
   <label>
     Size:
-    <input type="text" name="size" value ="{{unVelo.size}}" />
+    <input type="text" name="size" value="{{unVelo.size}}" />
   </label>
 
   <label>
     Description:
-    <textarea name="description" cols="10" rows="4" value ="{{unVelo.description}}"></textarea>
+    <textarea name="description" cols="10" rows="4" value="{{unVelo.description}}"></textarea>
   </label>
 
   <label>Picture
-    <img src = "{{unVelo.picture}}"> 
-    <input type="file" name="picture" value ="{{unVelo.picture}}">
+    <img src="{{unVelo.picture}}">
+    <input type="file" name="picture">
   </label>
 
 
@@ -42,5 +42,3 @@
   <button>Je modifie mon velo</button>
 
 </form>
-
-
