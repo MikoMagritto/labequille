@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema
 const bikeSchema = Schema(
     {
-        user: { type: Schema.Types.ObjectId, ref: "User" },
+        user: { type: Schema.Types.ObjectId, ref: 'User' },
         brand: String,
         longitude: Number,
         latitude: Number,

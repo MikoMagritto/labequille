@@ -16,7 +16,7 @@ router.get("/bikes/:id", (req, res, next) => {
 
   Bike.findOne({ _id: req.params.id })
     .then(oneBike => {
-      //console.log(oneBike)
+      console.log(oneBike)
       res.render("bike-detail", {
         unVelo: oneBike
       })
