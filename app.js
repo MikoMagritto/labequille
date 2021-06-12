@@ -11,7 +11,11 @@ const path = require('path');
 
 
 mongoose
-  .connect("mongodb+srv://ChloeT:AxC36oVEkWZF775W@cluster0.jwh3k.mongodb.net/labequille", { useNewUrlParser: true })
+  .connect("mongodb+srv://ChloeT:AxC36oVEkWZF775W@cluster0.jwh3k.mongodb.net/labequille", {
+    useNewUrlParser: true,
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  })
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })

@@ -97,7 +97,7 @@ router.post('/login', (req, res, next) => {
 }); */
 
 router.post('/logout', (req, res) => {
-    req.session.destroy();
+    req.session.logout();
     res.redirect('/');
 });
 
