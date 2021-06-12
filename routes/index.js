@@ -4,8 +4,9 @@ const Bike = require("../models/Bike.model.js")
 
 /* GET home page */
 router.get('/', (req, res, next) => {
-  Bike.find().then(allBikes => {
-    // allBikes.forEach((b) => console.log(b));
+  Bike.find()
+  .populate('user')  
+  .then(allBikes => {
     res.render("index", { bikes: allBikes })
   }).catch(error => console.log(error))
 });
