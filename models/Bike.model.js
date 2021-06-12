@@ -4,7 +4,9 @@ const bikeSchema = Schema(
     {
         user: { type: Schema.Types.ObjectId, ref: "User" },
         brand: String,
-        location: { type: { type: String }, coordinates: [Number] },
+        longitude: Number,
+        latitude: Number,
+        //location: { type: { type: String }, coordinates: [Number] },
         type: String,
         status: String,
         size: String,

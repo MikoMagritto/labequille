@@ -35,16 +35,18 @@ router.post("/bike/create", fileUpload.single("picture"), (req, res, next) => {
   }
 
 
-  const { type, brand, location, status, size, description } = req.body
+  const { type, brand, latitude, longitude, status, size, description } = req.body
   const picture = req.file.path;
   Bike.create({
     user: req.session.currentUser._id,
     type,
     brand,
-    location: {
-      type: 'Point',
-      coordinates: [longitude, latitude]
-    },
+    longitude,
+    latitude,
+    // location: {
+    //   type: 'Point',
+    //   coordinates: [longitude, latitude]
+    // },
     status,
     size,
     description,
@@ -71,9 +73,9 @@ router.get("/bike/edit/:id", function (req, res, next) {
 
 router.post("/bike/edit/:id", fileUpload.single("picture"), function (req, res, next) {
   console.log("picture")
-  const { type, brand, location, status, size, description } = req.body
+  const { type, brand, longitude, latitude, status, size, description } = req.body
   const id = req.params.id;
-  const data = { type, brand, location, status, size, description };
+  const data = { type, brand, longitude, latitude, status, size, description };
   if (req.file) {
     data.picture = req.file.path
   }
