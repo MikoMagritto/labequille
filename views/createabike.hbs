@@ -1,45 +1,32 @@
-<form action="/bike/create" method="POST" enctype="multipart/form-data">
+<form  action="/bike/create" method="POST" enctype="multipart/form-data">
 
-
-
-  <label>
+  <label class="label">
     Type
-    <input type="text" name="type" />
-  </label>
+    <input type="text" name="type"  />
 
-  <label>
     Brand:
     <input type="text" name="brand" />
-  </label>
 
-  <label>
     Location:
     <input type="text" name="location" />
-  </label>
 
+    <input type="number" name="latitude" placeholder="latitude">
+    <input type="number" name="longitude" placeholder="longitude">
 
-  <label>
     Status:
     <input type="text" name="status" />
-  </label>
 
-  <label>
     Size:
     <input type="text" name="size" />
-  </label>
 
-  <label>
     Description:
     <textarea name="description" cols="30" rows="4"></textarea>
-  </label>
 
-  <input type="number" name="latitude" placeholder="latitude">
-  <input type="number" name="longitude" placeholder="longitude">
-
-  <label>Picture
+    Picture
     <input type="file" name="picture">
+    
   </label>
 
 
-  <button>Create a bike</button>
+  <button class="create">Create a bike</button>
 </form>

@@ -26,9 +26,9 @@
 
         <a href="/bike/create">Ajouter un vélo </a>
         <a href="/profil">Mon compte</a>
-        <form id="logout-form" action="/logout" method="POST">
-          <a href="javascript:{}" onclick="document.getElementById('logout-form').submit();">Se déconnecter</a>
-        </form>
+
+        {{!<form id="logout-form" action="/logout" method="POST"><button> Se deconnecter</button></form>--}}
+        <a href= "/logout" type= "submit"> Se deconnecter</a>
         {{else}}
         <a href="/signup">Inscription</a>
         <a href="/login">Connexion</a>

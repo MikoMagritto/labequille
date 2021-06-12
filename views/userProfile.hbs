@@ -2,17 +2,21 @@
 <h2>Welcome, {{ user.prenom }}!</h2>
 <p>This is your profile page my friend! And your email is: {{ user.mail }}</p>
 
-{{#each bikes}}
-{{brand}}
-{{location}}
-{{type}}
-{{status}}
-{{size}}
-{{description}}
-<img src="{{picture}}">
-<a href="/bike/edit/{{id}}">Edit</a>
-{{!delete <a href="/login">Connexion</a>}}
-{{/each}}
+<div class="container">
+  {{#each bikes}}
+  <div class="cart">
+    <h2>{{brand}}</h2>
+    <div>{{location}}</div>
+    <div>{{type}}</div>
+    <div>{{status}}</div>
+    <div>{{size}}</div>
+    <div>{{description}}</div>
+    <img src="{{picture}}">
+    <a href="/bike/edit/{{id}}">Edit</a>
+  </div>
+  {{/each}}
+</div>
+
 {{else}}
 <p>Still no logged in user, sorry!</p>
 {{/if}}
